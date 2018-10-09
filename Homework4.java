@@ -3,8 +3,12 @@ public class Homework4 {
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
-	public Homework4(String s, int i) {
+	 private String str;
+	 private int num;
 
+	public Homework4(String s, int i) {
+		str = s;
+		num = i;
 	}
 
 	/* Return the product of the stored number and the
@@ -12,34 +16,34 @@ public class Homework4 {
 	 * multiplication
 	 */
 	public int multiply(double d) {
-
+		return (int) (num * d);
 	}
 
 	/* Add the two provided numbers, and then multiply the
 	 * product by the stored number
 	 */
 	public double sumProduct(int a, double b) {
-
+		return (a + b) * num;
 	}
 
 	/* Return the remainder of the first number divided by
 	 * the integer portion of the provided double
 	 */
 	 public int remainder(double d) {
-
+		 return num % (int) d;
 	}
 
 	/* Return the length of the stored String
 	 */
 	public int getLength() {
-
+		return str.length();
 	}
 
 	/* Return the stored String followed by the provided
 	 * String. Put a space between the two Strings
 	 */
 	public String concat(String s) {
-
+		return str + " " + s;
 	}
 
 	public static void main(String[] args) {
@@ -47,14 +51,14 @@ public class Homework4 {
 
 		Homework4 hw4 = new Homework4("Hello, World!", 5);
 
-		if (hw4.multiply(2.5) == 12.25) {
+		if (hw4.multiply(2.5) == 12) {
 			System.out.println("Pass 1");
 		} else {
 			System.out.println("Fail 1");
 			exitCode += 1;
 		}
 
-		if (hw4.sumProduct(2, 2.5) == 20.25) {
+		if (hw4.sumProduct(2, 2.5) == 22.5) {
 			System.out.println("Pass 2");
 		} else {
 			System.out.println("Fail 2");
@@ -75,7 +79,7 @@ public class Homework4 {
 			exitCode += 1;
 		}
 
-		if (hw4.concat("Goodbye!").equals("Hello World! Goodbye!")) {
+		if (hw4.concat("Goodbye!").equals("Hello, World! Goodbye!")) {
 			System.out.println("Pass 5");
 		} else {
 			System.out.println("Fail 5");
